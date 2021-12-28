@@ -1,7 +1,10 @@
 import csv
 from time import *
 from hashlib import *
-from Block import Block
+import sys
+sys.path.insert(1, '../block-dev/Block')
+
+from Block import *
 
 i = 1
 Transaction_list = []
