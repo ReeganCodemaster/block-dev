@@ -62,7 +62,7 @@ for i in range(10):
 
     elif prompt.upper() == 'N':
         print(f'{Transaction_list}\n')
-        save_to_block = input('Do you want to save transactions to block? (Y) (n) \n')
+        save_to_block = input('Do you want to save transactions to block? (Y) (n) ')
         if save_to_block.upper() == 'Y':
             joint_first_trancation = '-'.join(Transaction_list[0])
             previous_hash = sha256(joint_first_trancation.encode('utf-8'))
@@ -72,7 +72,7 @@ for i in range(10):
             exit()
 
     else:
-        print('Invalid operation')
+        print('Invalid operation\n')
 
 
 
