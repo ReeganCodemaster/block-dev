@@ -4,7 +4,7 @@ from hashlib import *
 import sys
 sys.path.insert(1, '../block-dev/Block')
 
-from Block import *
+from Block import Block
 
 i = 1
 Transaction_list = []
@@ -50,12 +50,12 @@ for i in range(10):
     if prompt.upper() == 'Y':
         uName = input('Enter your user name: ')
         Reciever = input('Enter user name of the reciever of the payment: ')
-        Amnt = input('Enter amount: ')
+        Amnt = int(input('Enter amount: '))
         Cuurency = input('Enter currency: ')
         Tag = input('Enter Reason for transaction: ')
-        Transact = Transaction(uName,Reciever,Amnt,Cuurency,Tag)
+        Transact = Transaction(Reciever,uName,Amnt,Cuurency,Tag)
         print(Transact.list_1)
-        print('Transaction {}'.format(i) , Transact.Sender , 'payed {} to {}'.format(Transact.Amount,Transact.Reciever))
+        print('Transaction {} :\n'.format(i) , Transact.Sender , 'payed {} to {} \n'.format(Transact.Amount,Transact.Reciever))
         Transaction_list.insert(i,Transact.list_1)
     elif prompt.upper() == 'N':
         print(Transaction_list)
