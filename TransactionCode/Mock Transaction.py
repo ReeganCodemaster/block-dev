@@ -47,7 +47,7 @@ class Transaction:
 
 for i in range(10):
     prompt = input(f'Do you want to enter a new transaction: (Y) (n) ')
-    if prompt == 'Y':
+    if prompt.upper() == 'Y':
         uName = input('Enter your user name: ')
         Reciever = input('Enter user name of the reciever of the payment: ')
         Amnt = input('Enter amount: ')
@@ -57,7 +57,7 @@ for i in range(10):
         print(Transact.list_1)
         print('Transaction {}'.format(i) , Transact.Sender , 'payed {} to {}'.format(Transact.Amount,Transact.Reciever))
         Transaction_list.insert(i,Transact.list_1)
-    elif prompt == 'n':
+    elif prompt.upper() == 'N':
         print(Transaction_list)
         save_to_block = input('Do you want to save transactions to block?')
         if save_to_block == 'yes':
@@ -67,6 +67,8 @@ for i in range(10):
             block.mine(10)
             block.__str__()
             exit()
+    else:
+        print('Invalid operation')
 
 
 
